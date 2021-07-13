@@ -25,4 +25,4 @@ jobs:
 
       - name: Build artifact
         id: build
-        run: mvn -B install -P github --file pom.xml
+        run: mvn -B -P github --file pom.xml clean install
