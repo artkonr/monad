@@ -1,0 +1,28 @@
+name: Build snapshot
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        id: checkout
+
+      - name: Setup JDK
+        id: jdk-setup
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+
+      - name: Build artifact
+        id: build
+        run: mvn -B install -P github --file pom.xml
