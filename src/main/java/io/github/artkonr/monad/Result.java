@@ -112,6 +112,7 @@ public class Result<T> {
    *  the error within.
    * @param func mapping function
    * @return processed {@link Result}
+   * @param <M> type of the resulting object
    * @throws IllegalArgumentException if no argument provided
    */
   public <M> Result<M> map(Function<T, M> func) {
@@ -119,6 +120,19 @@ public class Result<T> {
     if (isFailure())
       return fail(this.error);
     return ok(func.apply(item));
+  }
+
+  /**
+   * Retrieves the item state of this {@link Result}.
+   *  Throws if it is not a <b>success</b>
+   * @return result item
+   * @throws NoSuchElementException if this {@link Result}
+   *  is not a success
+   */
+  public T get() {
+    if (isFailure())
+      throw new NoSuchElementException("Requested result object represents a failure");
+    return item;
   }
 
   /**

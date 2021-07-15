@@ -103,6 +103,13 @@ public class OpFailedException extends RuntimeException {
     return new OpFailedException(message, cause, false, false);
   }
 
+  /**
+   * Default constructor.
+   * @param message error message
+   * @param cause root cause
+   * @param enableSuppression whether to enable suppression
+   * @param writableStackTrace whether to fill in stack trace on creation
+   */
   OpFailedException(String message, Throwable cause,
                             boolean enableSuppression, boolean writableStackTrace) {
     super(message, cause, enableSuppression, writableStackTrace);
