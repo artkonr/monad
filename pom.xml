@@ -4,7 +4,7 @@
 
     <groupId>io.github.artkonr</groupId>
     <artifactId>monad</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <description>A collection of assorted user-friendly monads.</description>
     <packaging>jar</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
@@ -13,7 +13,7 @@
     <scm>
         <url>https://github.com/artkonr/monad.git</url>
         <connection>scm:git:https://github.com/artkonr/monad.git</connection>
-        <tag>HEAD</tag>
+        <tag>v1.0.1</tag>
     </scm>
 
     <developers>
